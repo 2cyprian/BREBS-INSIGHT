@@ -1,0 +1,13 @@
+/* App.css */
+
+.container {
+  max-width: 1200px; /* Adjust based on your design */
+  margin: 0 auto;
+  padding: 0 20px; /* Optional: Adds padding on the sides */
+}
+
+/* Example for a section */
+.section {
+  text-align: center;
+  /* Other styling */
+}
