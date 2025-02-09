@@ -1,0 +1,23 @@
+.services-section {
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .services-header {
+    background: #D32F2F;
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './hero.css';
+import cardsData from './CardsData';
 
-const HeroCards = ({ items }) => {
+
+const HeroCards = () => {
+  const [items] = useState(cardsData)
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {

@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { FaClock, FaLocationPin } from "react-icons/fa6";
 import { IoIosCall } from "react-icons/io";
-import logo from '../../assets/Frame-logo.svg';
 import { IoMenu, IoClose } from "react-icons/io5";
-
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import logo from '../../assets/Frame-logo.svg';
 import "./navbar.css";
-
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [language, setLanguage] = useState('EN');
+  const navigate = useNavigate(); // ✅ Hook for navigation
 
   const servicesSublinks = [
-    { name: "Logistics", link: "#logistics" },
-    { name: "Transportation", link: "#transportation" },
-    { name: "Clearing & Forwarding", link: "#clearing" },
-    { name: "Warehousing", link: "#warehousing" },
-    { name: "Human Resources", link: "#hr" },
-    { name: "Iron Sheets", link: "#iron-sheets" },
-    { name: "Business Management", link: "#business-mgmt" }
+    { name: "Logistics", link: "/services" },
+    { name: "Transportation", link: "/services" },
+    { name: "Clearing & Forwarding", link: "/services" },
+    { name: "Warehousing", link: "/services" },
+    { name: "Human Resources", link: "/services" },
+    { name: "Iron Sheets", link: "/services" },
+    { name: "Business Management", link: "/services" }
   ];
 
   const toggleLanguage = () => {
@@ -29,12 +29,11 @@ const Navbar = () => {
   return (
     <header className="navbar-header">
       <div className="navbar-container">
-        <div className="navbar-logo">
+        <div className="navbar-logo" onClick={() => navigate("/")}>
           <img src={logo} alt="BREBS INSIGHT COMPANY" className="logo" />
         </div>
         
         <div className="navbar-info">
-          
           <div className="info-item">
             <span className="icon"><IoIosCall color="#d32f2f" size={30}/></span>
             <div className="info-text">
@@ -62,7 +61,7 @@ const Navbar = () => {
       <nav className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
         <div className="menu-container">
           <div className="menu-links">
-            <a href="#" className="menu-item">Home</a>
+            <a className="menu-item" onClick={() => navigate("/")}>Home</a>
             
             {/* Services Dropdown */}
             <div 
@@ -70,16 +69,15 @@ const Navbar = () => {
               onClick={() => setOpenDropdown(prev => prev === 'services' ? null : 'services')}
             >
               <span className="dropdown-toggle">
-                Services
-                <span className="dropdown-arrow">▾</span>
+                Services <span className="dropdown-arrow">▾</span>
               </span>
               
               <div className={`dropdown-menu ${openDropdown === 'services' ? 'show' : ''}`}>
                 {servicesSublinks.map((service, index) => (
                   <a 
                     key={index}
-                    href={service.link} 
                     className="dropdown-item"
+                    onClick={() => navigate(service.link)} // ✅ Navigate on click
                   >
                     {service.name}
                   </a>
@@ -87,8 +85,8 @@ const Navbar = () => {
               </div>
             </div>
 
-            <a href="#" className="menu-item">About Us</a>
-            <a href="#" className="menu-item">Contact Us</a>
+            <a className="menu-item" onClick={() => navigate("/about")}>About Us</a>
+            <a className="menu-item" onClick={() => navigate("/contact")}>Contact Us</a>
           </div>
         </div>
       </nav>

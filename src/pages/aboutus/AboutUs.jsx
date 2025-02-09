@@ -3,9 +3,15 @@ import "./AboutUs.css";
 import aboutImage from "/img/businessman.jpg"; // Add a relevant image
 import logisticsImage from "/img/delivery.jpg"; // Image for logistics services
 import hrImage from "/img/hr-management.png"; // Image for human resources
+import TeamSection from "./about/Team";
+import StatisticsSection from "./about/Statistics";
+import LogisticsCard from "../../components/cards/LogisticCard";
 
 const AboutUs = () => {
   return (
+    <div className="about-us">
+
+  
     <section className="about-container">
       <div className="about-header">
         <img src={aboutImage} alt="About Brebs Insight" className="about-banner" />
@@ -47,7 +53,18 @@ const AboutUs = () => {
           local and global markets with <strong>clear, effective communication</strong> and service excellence.
         </p>
       </div>
+      
     </section>
+      <div className="our-team">
+        <TeamSection/>
+      </div>
+      <div className="statistics">
+        <StatisticsSection/>
+      </div>
+      <div className="logistics">
+        <LogisticsCard/>
+      </div>
+    </div>
   );
 };
 

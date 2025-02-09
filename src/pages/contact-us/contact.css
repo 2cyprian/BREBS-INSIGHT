@@ -1,0 +1,121 @@
+/* contact.css */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    background-color: #f8f9fa;
+  }
+  
+  .info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 40px;
+  }
+  
+  .form-container {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2b2d42;
+  }
+  
+  .form-container label {
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+    color: #2b2d42;
+  }
+  
+  .form-container input,
+  .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .form-container textarea {
+    resize: none;
+  }
+  
+  .btn {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: var(--primary-color);
+  }
+  
+  .contact-info {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .contact-info h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #2b2d42;
+  }
+  
+  .contact-info .info p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .navbar-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .navbar-socials a {
+    font-size: 24px;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-socials a:hover {
+    color: var(--primary-color);
+  }
+  .map-container{
+    width: 100%;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .info-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .contact-info {
+      margin-top: 30px;
+    }
+  }
+  

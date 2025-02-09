@@ -1,9 +1,9 @@
 
   const cardsData = [
     {
-      title: " Reliable Parcel & Package DeliverFast, Reliable & Nationwide Delivery",
-      subtitle: "We ensure your shipments reach their destination on time, in perfect condition—countrywide and beyond!",
-      ctaText: "Get a Quote",
+      title: " Enhance Your Efficiency, Transform Your Logistics",
+      subtitle: "Brebs Insight connects logistics and human resources to streamline your business needs. With a decade of expertise, we tailor solutions ensuring timely shipment delivery while navigating Tanzanian labor laws seamlessly.",
+      ctaText: "Start Your Transformation",
       ctaLink: "contact-us",
       image: "/img/delivery.jpg" // Add image paths
     },
