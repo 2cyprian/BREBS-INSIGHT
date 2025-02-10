@@ -8,6 +8,7 @@ import Navbar from './components/navbar/NavBar'
 import Footer from './components/footer/Footer'
 import HomeRoute from './pages/Home/HomeRoute'
 import AboutUs from './pages/aboutus/AboutUs'
+import ScrollToTop from './components/ScrolltoTop'
 
 
 
@@ -17,6 +18,7 @@ function App() {
   return (
     
     <Router>
+      <ScrollToTop/>
       <Navbar/> {/*this will dynamicly change per page */}
      <div className="content">
       <Routes>

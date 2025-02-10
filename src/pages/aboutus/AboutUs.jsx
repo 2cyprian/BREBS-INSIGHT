@@ -10,11 +10,11 @@ import LogisticsCard from "../../components/cards/LogisticCard";
 const AboutUs = () => {
   return (
     <div className="about-us">
+        <img src={aboutImage} alt="About Brebs Insight" className="about-banner" />
 
   
     <section className="about-container">
       <div className="about-header">
-        <img src={aboutImage} alt="About Brebs Insight" className="about-banner" />
         <h2>About Brebs Insight Company</h2>
       </div>
 
