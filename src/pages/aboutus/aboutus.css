@@ -74,6 +74,12 @@
     font-size: 14px;
     padding: 0 10px 15px;
   }
+  .project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Spacing between cards */
+    padding: 20px;
+  }
   
   @media (max-width: 768px) {
     .about-content {

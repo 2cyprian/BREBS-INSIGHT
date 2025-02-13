@@ -5,14 +5,14 @@ const TeamSection = () => {
   const teamMembers = [
     {
       id: 1,
-      name: 'John Doe',
-      position: 'Software Engineer',
+      name: 'Emmanuel Kivishe',
+      position: 'CEO',
       image: '/team/profile.png',
     },
     {
       id: 2,
-      name: 'Mark Smith',
-      position: 'UI/UX Designer',
+      name: 'Madam ruthbetha',
+      position: 'Managing Director',
       image: '/team/profile.png',
     },
     {

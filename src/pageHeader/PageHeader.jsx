@@ -20,7 +20,7 @@ const PageHeader = () => {
     },
     "/about": {
       title: "About Us",
-      background: "/img/about-bg.jpg",
+      background: "/img/businessman.jpg",
       overlayColor: "rgba(0, 0, 50, 0.8)",
     },
   };
@@ -39,7 +39,7 @@ const PageHeader = () => {
       >
         <h1>{currentPage.title}</h1>
         <div className="breadcrumb-container" id="breadcrumb-container">
-          <span className="breadcrumb">Home</span> ➜ <span className="active">{currentPage.title}</span>
+          <span className="breadcrumb"><a href="/">Home</a></span> ➜ <span className="active">{currentPage.title}</span>
         </div>
       </div>
     </section>

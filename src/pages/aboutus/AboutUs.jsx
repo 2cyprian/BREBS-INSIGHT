@@ -1,16 +1,19 @@
 import React from "react";
+import LogisticsCard from "../../components/cards/LogisticCard";
+import PageHeader from "../../pageHeader/PageHeader";
+import Masonry from "../services/projects/Projects";
+import {data}  from "../services/projects/ProjectsData";
+import StatisticsSection from "./about/Statistics";
+import TeamSection from "./about/Team";
 import "./AboutUs.css";
-import aboutImage from "/img/businessman.jpg"; // Add a relevant image
 import logisticsImage from "/img/delivery.jpg"; // Image for logistics services
 import hrImage from "/img/hr-management.png"; // Image for human resources
-import TeamSection from "./about/Team";
-import StatisticsSection from "./about/Statistics";
-import LogisticsCard from "../../components/cards/LogisticCard";
+import ProjectCard from "../services/projects/Projects";
 
 const AboutUs = () => {
   return (
     <div className="about-us">
-        <img src={aboutImage} alt="About Brebs Insight" className="about-banner" />
+      <PageHeader/>
 
   
     <section className="about-container">
@@ -60,6 +63,19 @@ const AboutUs = () => {
       </div>
       <div className="statistics">
         <StatisticsSection/>
+      </div>
+      <div className="projects-grid">
+        <h1>Our Projects</h1>
+        <div className="project-list">
+      {data.map((project, index) => (
+        <ProjectCard
+          key={index}
+          title={project.title}
+          description={project.description}
+          image={project.image}
+        />
+      ))}
+      </div>
       </div>
       <div className="logistics">
         <LogisticsCard/>

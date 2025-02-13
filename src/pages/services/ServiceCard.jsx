@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import "./serviceCard.css"; // Include your CSS file
 import LogisticsCard from "../../components/cards/LogisticCard";
+import PageHeader from "../../pageHeader/PageHeader";
 
-const services = [
+export const services = [
   { title: "Logistics", icon: 'delivery.png', image: "delivery.jpg", description: "We aim to become a major player in the logistics sector by providing a wide range of shipment needs across all transportation networks." },
   { title: "Transportation", icon: 'transport.png', image: "transportation.jpg", description: "Ensuring the efficiency of delivering products from POINT A to POINT B in good condition at all times." },
   { title: "Clearing & Forwarding", icon: 'transport.png', image: "clearing.jpg", description: "Outstanding track records in clearing industrial and domestic equipment, materials, containers, vehicles, and goods in key sectors like mining and fuel companies." },
@@ -23,6 +24,7 @@ const ServiceCard = () => {
   return (
     
     <div className="service">
+      <PageHeader/>
       <div className="service-container">
         {services.map((service, index) => (
           <div key={index} className="service-card-container">

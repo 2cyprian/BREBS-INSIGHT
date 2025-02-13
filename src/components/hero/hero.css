@@ -166,6 +166,9 @@
     padding: 0.8rem 1.2rem;
     font-size: 1.2rem;
   }
+  .cta-button{
+    margin-bottom: 10%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -179,5 +182,9 @@
   
   .dots-container {
     bottom: 1rem;
+  
+  }
+  .cta-button{
+    margin-bottom: 10%;
   }
 }

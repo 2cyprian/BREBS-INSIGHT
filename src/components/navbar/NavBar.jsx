@@ -9,13 +9,11 @@ import "./navbar.css";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [language, setLanguage] = useState("EN");
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
-    
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
         setIsVisible(false); // Hide navbar on scroll down
@@ -29,6 +27,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // Close the menu when a navigation link is clicked
+  const handleLinkClick = (link) => {
+    setIsMenuOpen(false); // Close the menu
+    navigate(link); // Navigate to the link
+  };
+
   const servicesSublinks = [
     { name: "Logistics", link: "/services" },
     { name: "Transportation", link: "/services" },
@@ -39,14 +43,10 @@ const Navbar = () => {
     { name: "Business Management", link: "/services" },
   ];
 
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "EN" ? "SW" : "EN"));
-  };
-
   return (
     <header className={`navbar-header ${isVisible ? "show" : "hide"}`}>
       <div className="navbar-container">
-        <div className="navbar-logo" onClick={() => navigate("/")}>
+        <div className="navbar-logo" onClick={() => handleLinkClick("/")}>
           <img src={logo} alt="BREBS INSIGHT COMPANY" className="logo" />
         </div>
 
@@ -64,9 +64,6 @@ const Navbar = () => {
 
         {/* Mobile Controls */}
         <div className="mobile-controls">
-          <button className="language-switcher" onClick={toggleLanguage}>
-            {language}
-          </button>
           <button
             className="hamburger"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -77,10 +74,14 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Hamburger Menu */}
       <nav className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
         <div className="menu-container">
           <div className="nav-menu-links">
-            <a className="nav-menu-item" onClick={() => navigate("/")}>
+            <a
+              className="nav-menu-item"
+              onClick={() => handleLinkClick("/")}
+            >
               Home
             </a>
 
@@ -97,17 +98,27 @@ const Navbar = () => {
 
               <div className={`dropdown-menu ${openDropdown === "services" ? "show" : ""}`}>
                 {servicesSublinks.map((service, index) => (
-                  <a key={index} className="dropdown-item" onClick={() => navigate(service.link)}>
+                  <a
+                    key={index}
+                    className="dropdown-item"
+                    onClick={() => handleLinkClick(service.link)}
+                  >
                     {service.name}
                   </a>
                 ))}
               </div>
             </div>
 
-            <a className="nav-menu-item" onClick={() => navigate("/about")}>
+            <a
+              className="nav-menu-item"
+              onClick={() => handleLinkClick("/about")}
+            >
               About Us
             </a>
-            <a className="nav-menu-item" onClick={() => navigate("/contact")}>
+            <a
+              className="nav-menu-item"
+              onClick={() => handleLinkClick("/contact")}
+            >
               Contact Us
             </a>
           </div>
